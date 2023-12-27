@@ -4,13 +4,22 @@ public class LinkedListMain {
         LinkedList linkedList = new LinkedList();
         linkedList.append(56);
         linkedList.append(30);
+        linkedList.append(40);
         linkedList.append(70);
+
+    
         linkedList.display();
 
-        int searchKey = 30;
-        linkedList.insertAfter(searchKey, 40); 
+        int deleteKey = 40;
+        boolean deleted = linkedList.delete(deleteKey);
+        if (deleted) {
+            System.out.println("Node with key " + deleteKey + " deleted");
+        }
 
+    
+        linkedList.display();
+        
       
-        linkedList.display();
+        System.out.println("Size of the Linked List: " + linkedList.size());
     }
 }
