@@ -70,6 +70,19 @@ public class LinkedList {
         return null; 
     }
 
+    public void insertAfter(int key, int data) {
+        Node prevNode = search(key);
+
+        if (prevNode == null) {
+            System.out.println("Node with key " + key + " not found");
+            return;
+        }
+
+        Node newNode = new Node(data);
+        newNode.next = prevNode.next;
+        prevNode.next = newNode;
+    }
+
 
     
 
