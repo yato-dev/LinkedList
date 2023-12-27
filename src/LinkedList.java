@@ -83,6 +83,41 @@ public class LinkedList {
         prevNode.next = newNode;
     }
 
+    public boolean delete(int key) {
+        if (head == null) {
+            System.out.println("Linked list is empty");
+            return false;
+        }
+
+        if (head.data == key) {
+            head = head.next;
+            return true;
+        }
+
+        Node current = head;
+        while (current.next != null && current.next.data != key) {
+            current = current.next;
+        }
+
+        if (current.next == null) {
+            System.out.println("Node with key " + key + " not found");
+            return false;
+        }
+
+        current.next = current.next.next;
+        return true;
+    }
+
+    public int size() {
+        int count = 0;
+        Node current = head;
+        while (current != null) {
+            count++;
+            current = current.next;
+        }
+        return count;
+    }
+
 
     
 
