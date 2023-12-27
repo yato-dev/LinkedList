@@ -10,13 +10,17 @@ public class LinkedList {
         System.out.println("null");
     }
 
+    public void add(int data) {
+        Node newNode = new Node(data);
+        newNode.next = head;
+        head = newNode;
+    }
+
     public static void main(String[] args) {
         LinkedList linkedList = new LinkedList();
-        linkedList.head = new Node(56);
-        linkedList.head.next = new Node(30);
-        linkedList.head.next.next = new Node(70);
+        linkedList.add(70);
+        linkedList.add(30);
+        linkedList.add(56);
 
-       
         linkedList.display();
-    }
 }
