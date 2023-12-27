@@ -10,17 +10,25 @@ public class LinkedList {
         System.out.println("null");
     }
 
-    public void add(int data) {
+    public void append(int data) {
         Node newNode = new Node(data);
-        newNode.next = head;
-        head = newNode;
+        if (head == null) {
+            head = newNode;
+        } else {
+            Node last = head;
+            while (last.next != null) {
+                last = last.next;
+            }
+            last.next = newNode;
+        }
     }
 
     public static void main(String[] args) {
         LinkedList linkedList = new LinkedList();
-        linkedList.add(70);
-        linkedList.add(30);
-        linkedList.add(56);
+        linkedList.append(56);
+        linkedList.append(30);
+        linkedList.append(70);
 
         linkedList.display();
+    }
 }
