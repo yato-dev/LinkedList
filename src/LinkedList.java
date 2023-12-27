@@ -59,6 +59,17 @@ public class LinkedList {
         secondLast.next = null;
     }
 
+    public Node search(int key) {
+        Node current = head;
+        while (current != null) {
+            if (current.data == key) {
+                return current;
+            }
+            current = current.next;
+        }
+        return null; 
+    }
+
 
     
 
