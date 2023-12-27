@@ -23,12 +23,19 @@ public class LinkedList {
         }
     }
 
-    public static void main(String[] args) {
-        LinkedList linkedList = new LinkedList();
-        linkedList.append(56);
-        linkedList.append(30);
-        linkedList.append(70);
+    public void insertAfter(Node prevNode, int data) {
+        if (prevNode == null) {
+            System.out.println("Previous node cannot be null");
+            return;
+        }
 
-        linkedList.display();
+        Node newNode = new Node(data);
+        newNode.next = prevNode.next;
+        prevNode.next = newNode;
     }
+
+
+    
+
+   
 }
