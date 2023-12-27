@@ -5,9 +5,9 @@ public class LinkedListMain {
         linkedList.append(56);
         linkedList.append(30);
         linkedList.append(70);
-        
+
         linkedList.display();
-        linkedList.pop(); 
+        linkedList.popLast(); 
         linkedList.display();
     }
     
